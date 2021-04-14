@@ -2,14 +2,6 @@
 # -*- coding=utf-8 -*-
 __author__ = "TL"
 
-"""
-參考資料:
-https://aqicn.org/city/taiwan/taoyuan/hk/
-https://www.iqair.com/tw/taiwan/taoyuan
-https://airtw.epa.gov.tw/CHT/EnvMonitoring/Central/CentralMonitoring.aspx
-https://blog.csdn.net/helunqu2017/article/details/78736686
-
-"""
 
 import json
 import sys
@@ -50,7 +42,6 @@ except:#  處理網路連線異常
 
 with open('AirQualityTaoyuan.json', 'r') as f:
     data = json.load(f)     #json string 轉 Python
-print("----------------Test line1--------------------------")
 
 # ItemId,ItemName,ItemEngName,ItemUnit,MonitorDate,Concentration
 
@@ -110,16 +101,6 @@ print(listO3)
 print(listCO)
 print(listSO2)
 
-"""
-#20210406修掉監測日期亂跑問題_markdown正確
-#轉換日期格式
-x=0
-while x<len(listMonitorDate):
-    listMonitorDate[x] = listMonitorDate[x].replace(' 上午 ', ' ')
-    listMonitorDate[x] = listMonitorDate[x].replace(' 下午 ', ' ')
-    x=x+1
-print(listMonitorDate[0])
-"""
 #資料型別轉換
 NewlistPM25=[]
 print(len(listPM25))
